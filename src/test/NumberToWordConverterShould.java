@@ -26,4 +26,10 @@ public class NumberToWordConverterShould {
 		assertEquals("TWO", numberToWordConverter.convertNumberToWord(2));
 	}
 	
+	@Test
+	public void return_NINE_for_21() {
+		NumberToWordConverter numberToWordConverter = new NumberToWordConverter();
+		assertEquals("TWENTY ONE", numberToWordConverter.convertNumberToWord(21));
+	}
+
 }

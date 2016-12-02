@@ -13,5 +13,11 @@ public class NumberToWordConverterShould {
 		NumberToWordConverter numberToWordConverter = new NumberToWordConverter();
 		assertEquals("ONE", numberToWordConverter.convertNumberToWord(1));
 	}
+	
+	@Test
+	public void return_one_for_0() {
+		NumberToWordConverter numberToWordConverter = new NumberToWordConverter();
+		assertEquals("ZERO", numberToWordConverter.convertNumberToWord(0));
+	}
 
 }

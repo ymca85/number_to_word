@@ -9,7 +9,7 @@ import main.NumberToWordConverter;
 public class NumberToWordConverterShould {
 
 	@Test
-	public void return_one_for_1() {
+	public void return_ONE_for_1() {
 		NumberToWordConverter numberToWordConverter = new NumberToWordConverter();
 		assertEquals("ONE", numberToWordConverter.convertNumberToWord(1));
 	}

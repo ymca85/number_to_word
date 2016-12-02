@@ -15,7 +15,7 @@ public class NumberToWordConverterShould {
 	}
 	
 	@Test
-	public void return_one_for_0() {
+	public void return_ZERO_for_0() {
 		NumberToWordConverter numberToWordConverter = new NumberToWordConverter();
 		assertEquals("ZERO", numberToWordConverter.convertNumberToWord(0));
 	}

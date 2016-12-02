@@ -19,5 +19,11 @@ public class NumberToWordConverterShould {
 		NumberToWordConverter numberToWordConverter = new NumberToWordConverter();
 		assertEquals("ZERO", numberToWordConverter.convertNumberToWord(0));
 	}
+	
+	@Test
+	public void return_NINE_for_2() {
+		NumberToWordConverter numberToWordConverter = new NumberToWordConverter();
+		assertEquals("TWO", numberToWordConverter.convertNumberToWord(2));
+	}
 
 }

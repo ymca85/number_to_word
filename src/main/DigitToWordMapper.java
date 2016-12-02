@@ -13,6 +13,6 @@ public class DigitToWordMapper {
 	}
 	
 	public DigitInWord getWordFromDigit(int digit) {
-		return digitAndWordMap.get(digit);
+		return digitAndWordMap.getOrDefault(digit, DigitInWord.UNKNOWN);
 	}
 }

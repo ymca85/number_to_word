@@ -25,5 +25,5 @@ public class NumberToWordConverterShould {
 		NumberToWordConverter numberToWordConverter = new NumberToWordConverter();
 		assertEquals("TWO", numberToWordConverter.convertNumberToWord(2));
 	}
-
+	
 }

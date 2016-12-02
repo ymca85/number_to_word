@@ -3,11 +3,11 @@ package main;
 public class NumberToWordConverter {
 
 	public String convertNumberToWord(int number) {
-		if(number == 1) {
-			return "one";			
+		if (number == 1) {
+			return DigitInWord.ONE.name();
 		}
-		return "number";
-		
+		return DigitInWord.UNKNOWN.name();
+
 	}
 
 }

@@ -11,7 +11,7 @@ public class NumberToWordConverterShould {
 	@Test
 	public void return_one_for_1() {
 		NumberToWordConverter numberToWordConverter = new NumberToWordConverter();
-		assertEquals("one", numberToWordConverter.convertNumberToWord(1));
+		assertEquals("ONE", numberToWordConverter.convertNumberToWord(1));
 	}
 
 }

@@ -3,6 +3,7 @@ package main;
 public enum DigitInWord {
 	ZERO (0),
 	ONE (1),
+	TWO(2),
 	UNKNOWN (-999);
 
 	int numericValue;

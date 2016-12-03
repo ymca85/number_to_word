@@ -39,10 +39,10 @@ public class NumberToWordMapper {
 
 	String convertThreeDigitNumberToWord(int number) {
 
-		if(number / 100 <= 0) {
+		if (number < DigitInWord.HUNDRED.numericValue) {
 			return convertTwoDigitNumberToWord(number);
 		}
-		
+
 		int digitAtHundredPlace = number / DigitInWord.HUNDRED.numericValue;
 		number = number % DigitInWord.HUNDRED.numericValue;
 

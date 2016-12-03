@@ -91,5 +91,23 @@ public class NumberToWordConverterShould {
 		NumberToWordConverter numberToWordConverter = new NumberToWordConverter();
 		assertEquals("ONE HUNDRED AND ONE", numberToWordConverter.convertNumberToWord(101));
 	}
+	
+	@Test
+	public void return_ONE_HUNDRED_AND_ELEVEN_for_111() {
+		NumberToWordConverter numberToWordConverter = new NumberToWordConverter();
+		assertEquals("ONE HUNDRED AND ELEVEN", numberToWordConverter.convertNumberToWord(111));
+	}
+	
+	@Test
+	public void return_NINE_HUNDRED_AND_NINTY_NINE_for_999() {
+		NumberToWordConverter numberToWordConverter = new NumberToWordConverter();
+		assertEquals("NINE HUNDRED AND NINTY NINE", numberToWordConverter.convertNumberToWord(999));
+	}
+	
+	@Test
+	public void return_ONE_THOUSAND_for_1000() {
+		NumberToWordConverter numberToWordConverter = new NumberToWordConverter();
+		assertEquals("ONE THOUSAND", numberToWordConverter.convertNumberToWord(1000));
+	}
 
 }

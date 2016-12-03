@@ -109,5 +109,11 @@ public class NumberToWordConverterShould {
 		NumberToWordConverter numberToWordConverter = new NumberToWordConverter();
 		assertEquals("ONE THOUSAND", numberToWordConverter.convertNumberToWord(1000));
 	}
+	
+	@Test
+	public void return_ONE_THOUSAND_ONE_for_1001() {
+		NumberToWordConverter numberToWordConverter = new NumberToWordConverter();
+		assertEquals("ONE THOUSAND ONE", numberToWordConverter.convertNumberToWord(1001));
+	}
 
 }

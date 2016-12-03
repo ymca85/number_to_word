@@ -85,5 +85,11 @@ public class NumberToWordConverterShould {
 		NumberToWordConverter numberToWordConverter = new NumberToWordConverter();
 		assertEquals("ONE HUNDRED", numberToWordConverter.convertNumberToWord(100));
 	}
+	
+	@Test
+	public void return_ONE_HUNDRED_AND_ONE_for_101() {
+		NumberToWordConverter numberToWordConverter = new NumberToWordConverter();
+		assertEquals("ONE HUNDRED AND ONE", numberToWordConverter.convertNumberToWord(101));
+	}
 
 }

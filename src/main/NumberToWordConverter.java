@@ -6,13 +6,19 @@ public class NumberToWordConverter {
 
 		NumberToWordMapper numberToWordMapper = new NumberToWordMapper();
 
-		if (isNumberInHundreds(number)) {
+		if (isNumberInThousands(number)) {
+			return numberToWordMapper.convertFourDigitNumberToWord(number);
+		} else if (isNumberInHundreds(number)) {
 			return numberToWordMapper.convertThreeDigitNumberToWord(number);
 		} else if (isNumberGreaterThanNinteen(number)) {
 			return numberToWordMapper.convertTwoDigitNumberToWord(number);
 		}
 		
 		return numberToWordMapper.getTextForNumericValue(number);
+	}
+
+	private boolean isNumberInThousands(int number) {
+		return number/1000 > 0;
 	}
 
 	private boolean isNumberGreaterThanNinteen(int number) {

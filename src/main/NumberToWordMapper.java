@@ -49,4 +49,9 @@ public class NumberToWordMapper {
 				+ convertTwoDigitNumberToWord(number);
 	}
 
+	String convertFourDigitNumberToWord(int number) {
+
+		return getTextForNumericValue(number / DigitInWord.THOUSAND.numericValue) + " " + DigitInWord.THOUSAND.name();
+	}
+
 }

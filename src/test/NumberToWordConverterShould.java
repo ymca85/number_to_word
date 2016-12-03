@@ -49,5 +49,11 @@ public class NumberToWordConverterShould {
 		NumberToWordConverter numberToWordConverter = new NumberToWordConverter();
 		assertEquals("TWENTY NINE", numberToWordConverter.convertNumberToWord(29));
 	}
+	
+	@Test
+	public void return_THIRTY_for_30() {
+		NumberToWordConverter numberToWordConverter = new NumberToWordConverter();
+		assertEquals("THIRTY", numberToWordConverter.convertNumberToWord(30));
+	}
 
 }

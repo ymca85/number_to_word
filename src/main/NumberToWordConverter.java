@@ -4,17 +4,12 @@ public class NumberToWordConverter {
 
 	public String convertNumberToWord(int number) {
 
-		DigitToWordMapper digitToWordMapper = new DigitToWordMapper();
+		NumberToWordMapper numberToWordMapper = new NumberToWordMapper();
 
 		if (number > DigitInWord.TWENTY.numericValue) {
-
-			int digitAtTens = number / DigitInWord.TEN.numericValue;
-			int digitAtUnit = number % DigitInWord.TEN.numericValue;
-
-			return digitToWordMapper.getWordFromDigit(digitAtTens * DigitInWord.TEN.numericValue).name() + " "
-					+ digitToWordMapper.getWordFromDigit(digitAtUnit).name();
+			return numberToWordMapper.convertNumberToWord(number);
 		}
 
-		return digitToWordMapper.getWordFromDigit(number).name();
+		return numberToWordMapper.getWordFromDigit(number).name();
 	}
 }

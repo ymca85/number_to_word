@@ -6,20 +6,28 @@ public class NumberToWordConverter {
 
 		NumberToWordMapper numberToWordMapper = new NumberToWordMapper();
 
-		if (number >= 100) {
+		if (isThreeDigitNumber(number)) {
 
 			int digitAtHundredPlace = number / DigitInWord.HUNDRED.numericValue;
-			int numberAtTens = number % DigitInWord.HUNDRED.numericValue;
+			number = number % DigitInWord.HUNDRED.numericValue;
 
-			if (numberAtTens == 0) {
-				return numberToWordMapper.getWordFromDigit(digitAtHundredPlace).name() + " "
+			if (number == 0) {
+				return numberToWordMapper.getTextForNumericValue(digitAtHundredPlace) + " "
 						+ DigitInWord.HUNDRED.name();
 			}
-
-		} else if (number > DigitInWord.TWENTY.numericValue) {
+		} else if (isTwoDigitNumber(number)) {
 			return numberToWordMapper.convertNumberToWord(number);
 		}
 
-		return numberToWordMapper.getWordFromDigit(number).name();
+		return numberToWordMapper.getTextForNumericValue(number);
 	}
+
+	private boolean isTwoDigitNumber(int number) {
+		return number / DigitInWord.TEN.numericValue > 0;
+	}
+
+	private boolean isThreeDigitNumber(int number) {
+		return number / DigitInWord.HUNDRED.numericValue > 0;
+	}
+
 }

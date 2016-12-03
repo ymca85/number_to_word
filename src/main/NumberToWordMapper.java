@@ -12,21 +12,25 @@ public class NumberToWordMapper {
 		}
 	}
 
-	public DigitInWord getWordFromDigit(int digit) {
+	public DigitInWord getNumberToWord(int digit) {
 		return digitAndWordMap.getOrDefault(digit, DigitInWord.UNKNOWN);
 	}
 
 	String convertNumberToWord(int number) {
 
-		int digitAtTens = number / DigitInWord.TEN.numericValue;
-		int digitAtUnit = number % DigitInWord.TEN.numericValue;
+		int digitAtTenPlace = number / DigitInWord.TEN.numericValue;
+		number = number % DigitInWord.TEN.numericValue;
 
-		if (digitAtUnit == 0) {
-			return getWordFromDigit(digitAtTens * DigitInWord.TEN.numericValue).name();
+		if (number == 0) {
+			return getTextForNumericValue(digitAtTenPlace * DigitInWord.TEN.numericValue);
 		}
 
-		return getWordFromDigit(digitAtTens * DigitInWord.TEN.numericValue).name() + " "
-				+ getWordFromDigit(digitAtUnit).name();
+		return getTextForNumericValue(digitAtTenPlace * DigitInWord.TEN.numericValue) + " "
+				+ getTextForNumericValue(number);
+	}
+
+	String getTextForNumericValue(int numericValue) {
+		return getNumberToWord(numericValue).name();
 	}
 
 }

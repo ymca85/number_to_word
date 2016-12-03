@@ -16,7 +16,11 @@ public class NumberToWordMapper {
 		return digitAndWordMap.getOrDefault(digit, DigitInWord.UNKNOWN);
 	}
 
-	String convertNumberToWord(int number) {
+	String convertTwoDigitNumberToWord(int number) {
+
+		if (number < DigitInWord.NINETEEN.numericValue) {
+			return getTextForNumericValue(number);
+		}
 
 		int digitAtTenPlace = number / DigitInWord.TEN.numericValue;
 		number = number % DigitInWord.TEN.numericValue;
@@ -31,6 +35,18 @@ public class NumberToWordMapper {
 
 	String getTextForNumericValue(int numericValue) {
 		return getNumberToWord(numericValue).name();
+	}
+
+	String convertThreeDigitNumberToWord(int number) {
+
+		int digitAtHundredPlace = number / DigitInWord.HUNDRED.numericValue;
+		number = number % DigitInWord.HUNDRED.numericValue;
+
+		if (number == 0) {
+			return getTextForNumericValue(digitAtHundredPlace) + " " + DigitInWord.HUNDRED.name();
+		}
+		return getTextForNumericValue(digitAtHundredPlace) + " " + DigitInWord.HUNDRED.name() + " AND "
+				+ convertTwoDigitNumberToWord(number);
 	}
 
 }

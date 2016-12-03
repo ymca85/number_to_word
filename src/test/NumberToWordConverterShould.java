@@ -115,5 +115,30 @@ public class NumberToWordConverterShould {
 		NumberToWordConverter numberToWordConverter = new NumberToWordConverter();
 		assertEquals("ONE THOUSAND ONE", numberToWordConverter.convertNumberToWord(1001));
 	}
+	
+	@Test
+	public void return_ONE_THOUSAND_TWO_HUNDRED_AND_THIRTY_FOUR_for_1234() {
+		NumberToWordConverter numberToWordConverter = new NumberToWordConverter();
+		assertEquals("ONE THOUSAND TWO HUNDRED AND THIRTY FOUR", numberToWordConverter.convertNumberToWord(1234));
+	}
+	
+	@Test
+	public void return_NINE_THOUSAND_NINE_HUNDRED_AND_NINTY_NINE_for_9999() {
+		NumberToWordConverter numberToWordConverter = new NumberToWordConverter();
+		assertEquals("NINE THOUSAND NINE HUNDRED AND NINTY NINE", numberToWordConverter.convertNumberToWord(9999));
+	}
+	
+	@Test
+	public void return_NINE_THOUSAND_NINE_HUNDRED_for_9900() {
+		NumberToWordConverter numberToWordConverter = new NumberToWordConverter();
+		assertEquals("NINE THOUSAND NINE HUNDRED", numberToWordConverter.convertNumberToWord(9900));
+	}
+	
+	@Test
+	public void return_NINE_THOUSAND_NINE_HUNDRED_AND_NINTYfor_9990() {
+		NumberToWordConverter numberToWordConverter = new NumberToWordConverter();
+		assertEquals("NINE THOUSAND NINE HUNDRED AND NINTY", numberToWordConverter.convertNumberToWord(9990));
+	}
+	
 
 }

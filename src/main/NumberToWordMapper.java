@@ -39,6 +39,10 @@ public class NumberToWordMapper {
 
 	String convertThreeDigitNumberToWord(int number) {
 
+		if(number / 100 <= 0) {
+			return convertTwoDigitNumberToWord(number);
+		}
+		
 		int digitAtHundredPlace = number / DigitInWord.HUNDRED.numericValue;
 		number = number % DigitInWord.HUNDRED.numericValue;
 
@@ -51,7 +55,14 @@ public class NumberToWordMapper {
 
 	String convertFourDigitNumberToWord(int number) {
 
-		return getTextForNumericValue(number / DigitInWord.THOUSAND.numericValue) + " " + DigitInWord.THOUSAND.name();
+		int digitAtThousandPlace = number / DigitInWord.THOUSAND.numericValue;
+		number = number % DigitInWord.THOUSAND.numericValue;
+
+		if (number == 0) {
+			return getTextForNumericValue(digitAtThousandPlace) + " " + DigitInWord.THOUSAND.name();
+		}
+		return getTextForNumericValue(digitAtThousandPlace) + " " + DigitInWord.THOUSAND.name() + " "
+				+ convertThreeDigitNumberToWord(number);
 	}
 
 }

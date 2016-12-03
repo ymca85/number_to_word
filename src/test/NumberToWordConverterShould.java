@@ -79,5 +79,11 @@ public class NumberToWordConverterShould {
 		NumberToWordConverter numberToWordConverter = new NumberToWordConverter();
 		assertEquals("NINTY NINE", numberToWordConverter.convertNumberToWord(99));
 	}
+	
+	@Test
+	public void return_ONE_HUNDRED_for_100() {
+		NumberToWordConverter numberToWordConverter = new NumberToWordConverter();
+		assertEquals("ONE HUNDRED", numberToWordConverter.convertNumberToWord(100));
+	}
 
 }

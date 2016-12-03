@@ -28,4 +28,5 @@ public class NumberToWordMapper {
 		return getWordFromDigit(digitAtTens * DigitInWord.TEN.numericValue).name() + " "
 				+ getWordFromDigit(digitAtUnit).name();
 	}
+
 }

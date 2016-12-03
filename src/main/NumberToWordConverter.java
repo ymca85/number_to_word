@@ -6,7 +6,17 @@ public class NumberToWordConverter {
 
 		NumberToWordMapper numberToWordMapper = new NumberToWordMapper();
 
-		if (number > DigitInWord.TWENTY.numericValue) {
+		if (number >= 100) {
+
+			int digitAtHundredPlace = number / DigitInWord.HUNDRED.numericValue;
+			int numberAtTens = number % DigitInWord.HUNDRED.numericValue;
+
+			if (numberAtTens == 0) {
+				return numberToWordMapper.getWordFromDigit(digitAtHundredPlace).name() + " "
+						+ DigitInWord.HUNDRED.name();
+			}
+
+		} else if (number > DigitInWord.TWENTY.numericValue) {
 			return numberToWordMapper.convertNumberToWord(number);
 		}
 

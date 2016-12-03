@@ -16,6 +16,10 @@ public class NumberToWordMapper {
 		return digitAndWordMap.getOrDefault(digit, DigitInWord.UNKNOWN);
 	}
 
+	String getTextForNumericValue(int numericValue) {
+		return getNumberToWord(numericValue).name();
+	}
+
 	String convertTwoDigitNumberToWord(int number) {
 
 		if (number < DigitInWord.NINETEEN.numericValue) {
@@ -31,10 +35,6 @@ public class NumberToWordMapper {
 
 		return getTextForNumericValue(digitAtTenPlace * DigitInWord.TEN.numericValue) + " "
 				+ getTextForNumericValue(number);
-	}
-
-	String getTextForNumericValue(int numericValue) {
-		return getNumberToWord(numericValue).name();
 	}
 
 	String convertThreeDigitNumberToWord(int number) {

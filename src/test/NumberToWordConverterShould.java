@@ -55,5 +55,29 @@ public class NumberToWordConverterShould {
 		NumberToWordConverter numberToWordConverter = new NumberToWordConverter();
 		assertEquals("THIRTY", numberToWordConverter.convertNumberToWord(30));
 	}
+	
+	@Test
+	public void return_THIRTY_ONE_for_31() {
+		NumberToWordConverter numberToWordConverter = new NumberToWordConverter();
+		assertEquals("THIRTY ONE", numberToWordConverter.convertNumberToWord(31));
+	}
+	
+	@Test
+	public void return_THIRTY_ONE_for_39() {
+		NumberToWordConverter numberToWordConverter = new NumberToWordConverter();
+		assertEquals("THIRTY NINE", numberToWordConverter.convertNumberToWord(39));
+	}
+	
+	@Test
+	public void return_NINTY_for_90() {
+		NumberToWordConverter numberToWordConverter = new NumberToWordConverter();
+		assertEquals("NINTY", numberToWordConverter.convertNumberToWord(90));
+	}
+	
+	@Test
+	public void return_NINTY_NINE_for_99() {
+		NumberToWordConverter numberToWordConverter = new NumberToWordConverter();
+		assertEquals("NINTY NINE", numberToWordConverter.convertNumberToWord(99));
+	}
 
 }

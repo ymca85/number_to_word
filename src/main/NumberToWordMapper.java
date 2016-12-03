@@ -17,8 +17,13 @@ public class NumberToWordMapper {
 	}
 
 	String convertNumberToWord(int number) {
+
 		int digitAtTens = number / DigitInWord.TEN.numericValue;
 		int digitAtUnit = number % DigitInWord.TEN.numericValue;
+
+		if (digitAtUnit == 0) {
+			return getWordFromDigit(digitAtTens * DigitInWord.TEN.numericValue).name();
+		}
 
 		return getWordFromDigit(digitAtTens * DigitInWord.TEN.numericValue).name() + " "
 				+ getWordFromDigit(digitAtUnit).name();

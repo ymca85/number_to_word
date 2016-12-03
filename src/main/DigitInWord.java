@@ -22,6 +22,7 @@ public enum DigitInWord {
 	EIGHTEEN(18),
 	NINETEEN(19),
 	TWENTY(20),
+	THIRTY(30),
 	UNKNOWN (-999);
 
 	int numericValue;
